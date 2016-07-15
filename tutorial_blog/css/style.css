@@ -4,7 +4,12 @@ body {margin-top: 10px;
     font-family: ubuntu;
 } 
 
-/*Sections*/
+/*####GRID####*/
+.container{
+    max-width: 940px;
+}
+
+/*####SECTIONS####*/
 #favourite {
     margin-top: 80.09px;
 }
@@ -18,9 +23,10 @@ h2 {
     text-align: center;
     color: #29b6f6;
 }
-/*.background-white {
-    background: #fff;
-}*/
+#pagination{
+    margin-top: 85.41px;
+    margin-bottom: 82.59px;
+}
 
 
 /*header*/
@@ -35,6 +41,7 @@ h2 {
     
     background-color: black;
     color: white;
+    height: 65.09px;
     
 }
 #menu ul {
@@ -46,10 +53,18 @@ h2 {
     
    color: black;
     margin-top: 60px;
-    height: auto;
+    height: 59.88px;
     
 }
 
+img {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+hr{
+    width: 940px;
+}
 
 /*footer*/
 footer { 
