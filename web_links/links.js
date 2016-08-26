@@ -28,16 +28,16 @@ linkLists.forEach(function (linkList) {
     pElt.classList.add("link");
   
     var strongElt = document.createElement("strong");
-    strongElt.textContent = listeLien.titre;
+    strongElt.textContent = linkList.titre;
     
     var linkElt = document.createElement("a");
-    linkElt.href = listeLien.url;    
+    linkElt.href = linkList.url;    
     linkElt.style.color = "#428bca";
     linkElt.appendChild(strongElt);
     pElt.appendChild(linkElt);
     
     var spanElt = document.createElement("span");
-    spanElt.innerHTML = " (" + listeLien.url + ") <br/>" + "Added by " + listeLien.author;
+    spanElt.innerHTML = " (" + linkList.url + ") <br/>" + "Added by " + linkList.author;
     pElt.appendChild(spanElt);
     
     document.getElementById("contenu").appendChild(pElt); // Ajout de la liste à la page

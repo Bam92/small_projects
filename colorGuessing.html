@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <title>JavaScript Color Game</title>
+        <meta charset="utf-8">
+    </head>
+    
+    <body onload="doGame()" id="main">
+        
+        
+        <script>
+
+/*========================NOTE==================================
+I'm using camelCase to name variables & functions as it is 
+most popular in JS programming world
+===============================================================*/
+
+/*Global variables*/
+var colors = ["red", "blue", "orange", "purple", "gold", "black", "cyan", "green", "indigo", "yellow", "aqua", "grey"];
+            
+var listColors = colors.sort();
+var arrayLength = colors.length;
+var targetIndex, target, guessInput;
+var guesses = 0, finished = false;
+
+/*Main function - doGame () */
+function doGame () {
+    targetIndex = Math.floor (Math.random() * (arrayLength - 1));
+    target = colors[targetIndex];
+    
+    alert (target);
+    
+    while (!finished) {
+        guessInput = prompt ("I\'m thinking of one of these colors: \n\n" +
+                            listColors + "\n\n What color am I thinking of?");
+        
+        guesses += 1;
+        
+        finished = checkGuess ();
+    }
+}
+
+/*Check the input - checkGuess() */
+function checkGuess () {
+    var numberIndex = colors.indexOf(guessInput);
+    if (numberIndex === -1) {
+        alert ("Sorry, I don\'t recognize your color\n\n" +
+              "Please try again");
+        return false;
+    }
+    
+    if (guessInput > target) {
+        alert ("Sorry, Your guess is incorrect!\n\n" +
+              "Hint: your color is alphabetically higher than mine\n\n" +
+              "Please try again");
+        return false;
+    }
+    
+    if (guessInput < target) {
+        alert ("Sorry, Your guess is incorrect!\n\n" +
+              "Hint: your color is alphabetically lower than mine\n\n" +
+              "Please try again");
+        return false;
+    }
+    
+    if (guessInput === target) {
+       var bodyElt = document.getElementById("main");
+        bodyElt.style.backgroundColor = target;
+        
+        alert ("Congretulations! You have guessed the color!\n\n"+
+              "It took you " + guesses + " guess-es to finish the game!\n\n"+
+              "You can see the color in the background");
+        return true;
+} }
+
+        </script>
+    </body>
+</html>
